@@ -334,8 +334,6 @@ class HybridCoder():
             flushOutputCodeWord = self.Table_FlushInputToOutputCodeWords[i].get(self.ActivePrefix[i])
             self.writeBinaryStringToBitStream(flushOutputCodeWord)  
             flushValues.append(flushOutputCodeWord)
-        print(self.ActivePrefix)
-        print(flushValues)
         # Codify Σ(t) as binary using 2+D+ɣ^* bits for each band in increasing order
         nBits = 2 + self.dynamicRangeInBits + self.gamma
         binaryString = bin(self.Sigma)[2:]
