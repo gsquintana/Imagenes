@@ -169,7 +169,7 @@ class HybridCoder():
         # High-Resolution accumulator 
         # 0 <= Σz(0) <= 2^(D+ɣ(0))
         Sigma_0_clipped = self.clip(self.Sigma_0, 0, 2**(self.dynamicRangeInBits+self.gamma_0)-1 )
-        self.Sigma = Sigma_0_clipped  
+        self.Sigma = Sigma_0_clipped
         # Active prefix
         self.ActivePrefix = []
         for index in range(0, 16):
@@ -242,9 +242,8 @@ class HybridCoder():
             binaryString = bin(self.Sigma)[-1:]
             self.writeBinaryStringToBitStream(binaryString)
             # Update the values (rescaling them)
-            self.Sigma = int((self.Sigma + 4*mappedResidual + 1)/2)
-            self.Gamma = int((self.Gamma + 1)/2)
-
+            self.Sigma = numpy.int64((self.Sigma + 4*mappedResidual + 1)/2)
+            self.Gamma = numpy.int64((self.Gamma + 1)/2)
 
 
     # Returns True: current mapped residual has to be processed as high-entropy
