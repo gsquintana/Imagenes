@@ -1,2 +1,3 @@
 # Elements ignored in the commits
 *__pychace__*
+*Data*
